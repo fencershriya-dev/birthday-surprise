@@ -1,186 +1,333 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="./style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pen</title><div class="website">
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  <!-- Welcome Section -->
-  <section class="welcome">
+html {
+  scroll-behavior: smooth;
+  min-height: 100%;
+}
 
-    <div class="stars">✦ ♡ ✦</div>
+body {
+  font-family: Georgia, serif;
+  background: linear-gradient(135deg, #21172e, #30213f, #463052, #251b35);
+  background-attachment: fixed;
+  color: #f4eaff;
+}
 
-    <p class="small-heading">
-      A LITTLE SURPRISE FOR
-    </p>
+.website {
+  min-height: 100vh;
+  padding: 30px 15px;
+}
 
-    <h1>Surpise For You</h1>
+.welcome {
+  min-height: 85vh;
+  background: #403451;
+  border: 2px solid #a98bc5;
+  border-radius: 25px;
+  padding: 50px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 10px 35px rgba(0,0,0,.3);
+}
 
-    <h2>Happy Birthday, My Girl! 💜</h2>
+.stars {
+  font-size: 35px;
+  color: #d5b4f2;
+  margin-bottom: 25px;
+}
 
-    <p class="intro">
-      Today is all about you.
-      I've made something special
-      just to make your day beautiful.
-    </p>
+h1 {
+  font-size: 42px;
+  color: #ead7ff;
+  margin-bottom: 12px;
+}
 
-    <button id="openButton">
-      Open Your Surprise ♡
-    </button>
+h2 {
+  font-size: 23px;
+  color: #ead7ff;
+  margin-bottom: 20px;
+}
 
-    <p class="bottom-note">
-      Made with love, just for you ✨
-    </p>
+h3 {
+  color: #38234f;
+}
 
-  </section>
+p {
+  line-height: 1.9;
+}
 
-  <!-- Birthday Scrapbook -->
-<section class="surprise" id="surprise">
+.intro {
+  max-width: 300px;
+  line-height: 1.8;
+  color: #e0d0ed;
+  margin-bottom: 30px;
+}
 
-  <div class="scrapbook">
+.small-heading {
+  letter-spacing: 4px;
+  font-size: 12px;
+  margin-bottom: 18px;
+  color: #d0b5e9;
+}
 
-    <p class="small-heading">A BOOK FULL OF MEMORIES</p>
+button {
+  background: linear-gradient(135deg, #a982cf, #76539c);
+  color: white;
+  border: 1px solid #d6b8f2;
+  border-radius: 30px;
+  padding: 15px 30px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all .3s ease;
+  box-shadow: 0 6px 18px rgba(0,0,0,.2);
+}
 
-    <h2>My Favourite Memories ♡</h2>
+button:hover {
+  transform: translateY(-4px) scale(1.03);
+}
 
-    <p class="memory-intro">
-      A few pictures, a million memories.
-    </p>
+/* Photo gallery */
+.scrapbook {
+  background: #403451;
+  border: 2px dashed #b99bd9;
+  border-radius: 22px;
+  padding: 35px 15px;
+  text-align: center;
+}
 
-    <div class="memory-grid">
+.memory-intro {
+  color: #e0d0ed;
+  margin-bottom: 35px;
+  font-style: italic;
+}
 
-      <div class="polaroid">
-        <img src="https://i.postimg.cc/ZnspWtd6/IMG-20261101-WA0006.jpg" alt="Memory 1">
-        <p>My favourite person ♡</p>
-      </div>
+.memory-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
 
-      <div class="polaroid">
-        <img src="https://i.postimg.cc/Qd31Vb9L/IMG-20261101-WA0005.jpg" alt="Memory 2">
-        <p>One of a kind ✨</p>
-      </div>
+.polaroid {
+  background: #eee7f7;
+  padding: 12px 12px 20px;
+  width: 220px;
+  box-shadow: 0 12px 30px rgba(0,0,0,.35);
+  border-radius: 8px;
+  transition: all .4s ease;
+}
 
-      <div class="polaroid">
-        <img src="https://i.postimg.cc/PqFCbzxx/IMG-20261101-215157.jpg" alt="Memory 3">
-        <p>Forever a special memory 💜</p>
-      </div>
+.polaroid:nth-child(1) { transform: rotate(-4deg); }
+.polaroid:nth-child(2) { transform: rotate(3deg); }
+.polaroid:nth-child(3) { transform: rotate(-2deg); }
 
-    </div>
+.polaroid:hover {
+  transform: translateY(-10px) rotate(-2deg) scale(1.03);
+}
 
-    <p class="scrapbook-footer">
-      Every picture has a story ♡
-    </p>
+.polaroid img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 4px;
+}
 
-  </div>
+.polaroid p {
+  font-family: cursive;
+  color: #49345e;
+  margin-top: 15px;
+  font-size: 15px;
+}
 
-</section>
-      <!-- Birthday Letter Section -->
+.scrapbook-footer,
+.bottom-note {
+  margin-top: 40px;
+  color: #d0b5e9;
+  font-family: cursive;
+}
 
-<section class="letter-section">
+.bottom-note {
+  font-size: 13px;
+}
 
-  <p class="small-heading">A LITTLE SOMETHING FOR YOU</p>
+/* Letter */
+.letter-section,
+.music-section {
+  margin-top: 30px;
+  padding: 45px 15px;
+  text-align: center;
+  background: #403451;
+  border-radius: 25px;
+}
 
-  <h2>A Letter From My Heart 💌</h2>
+.envelope {
+  max-width: 380px;
+  margin: 30px auto;
+  padding: 35px 20px;
+  background: #eee7f7;
+  border: 2px solid #d6b8f2;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0,0,0,.3);
+}
 
-  <div class="envelope">
-    <div class="envelope-icon">💌</div>
+.envelope-icon {
+  font-size: 65px;
+  margin-bottom: 15px;
+}
 
-    <h3>For My Girl ♡</h3>
+.envelope h3,
+.letter-content h3 {
+  color: #38234f;
+  margin-bottom: 20px;
+}
 
-    <p>There's something I want to tell you...</p>
+.envelope p {
+  color: #49345e;
+  margin-bottom: 22px;
+}
 
-    <button id="letterButton">
-      Open My Letter 💜
-    </button>
-  </div>
+.letter-content {
+  display: none;
+  max-width: 550px;
+  margin: 25px auto;
+  padding: 35px 25px;
+  background: #f0e7f7;
+  border: 2px dashed #c9a9e5;
+  border-radius: 12px;
+  text-align: left;
+  line-height: 1.9;
+  box-shadow: 0 8px 25px rgba(0,0,0,.3);
+}
 
-  <div class="letter-content" id="letterContent">
+.letter-content p {
+  color: #49345e;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
 
-    <h3>Dear Sisoo, 💗</h3>
+.letter-end {
+  text-align: right;
+  font-family: cursive;
+  font-size: 19px;
+  color: #38234f;
+}
 
-    <p>
-      Happy Birthday, My Girl!
-    </p>
+/* Surprise */
+.surprise {
+  display: none;
+  text-align: center;
+  padding: 60px 20px;
+  background: #403451;
+  border-radius: 25px;
+  margin-top: 25px;
+}
 
-    <p>
-      Today is all about celebrating you.
-      I hope your day is filled with happiness,
-      laughter and beautiful moments.
-    </p>
+.floating-hearts {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 10;
+}
 
-    <p>
-      Thank you for being such a special part
-      of my memories. You deserve all the
-      wonderful things life has to offer.
-    </p>
+.heart {
+  position: absolute;
+  bottom: -30px;
+  color: #d5b4f2;
+  font-size: 22px;
+  animation: floatUp 6s linear forwards;
+}
 
-    <p>
-      Keep smiling, keep shining and never
-      stop being yourself.
-    </p>
+@keyframes floatUp {
+  0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+  20% { opacity: 1; }
+  100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+}
 
-    <p class="letter-end">
-      With lots of love ♡
-    </p>
+.final-surprise {
+  margin-top: 30px;
+  padding: 55px 20px;
+  text-align: center;
+  background: #403451;
+  border: 2px dashed #b99bd9;
+  border-radius: 25px;
+}
 
-  </div>
+.final-surprise p {
+  color: #e0d0ed;
+  margin: 20px 0;
+  line-height: 1.7;
+}
 
-</section>
-      <!-- Floating Hearts -->
-<div class="floating-hearts" id="floatingHearts"></div>
+#magicMessage {
+  margin-top: 25px;
+  color: #e0c7f7;
+  font-family: cursive;
+}
 
-<!-- Final Surprise -->
-<section class="final-surprise">
+/* Music */
+.music-card {
+  max-width: 380px;
+  margin: 30px auto;
+  padding: 30px 20px;
+  background: #eee7f7;
+  border: 2px solid #d6b8f2;
+  border-radius: 22px;
+  box-shadow: 0 8px 25px rgba(0,0,0,.3);
+}
 
-  <h2>One Last Little Surprise 💜</h2>
+.music-icon {
+  font-size: 55px;
+  margin-bottom: 15px;
+}
 
-  <p>Because someone as special as you deserves magic.</p>
+.music-card h3 {
+  color: #38234f;
+  margin-bottom: 10px;
+}
 
-  <button id="magicButton">
-    Make a Wish ✨
-  </button>
+.song-artist,
+#musicStatus {
+  color: #49345e;
+  margin-bottom: 25px;
+}
 
-  <h3 id="magicMessage"></h3>
+#musicStatus {
+  font-size: 13px;
+  margin-top: 20px;
+}
 
-</section>
-      <!-- Music Player -->
+.music-controls {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
 
-<section class="music-section">
+.music-controls button {
+  padding: 12px 22px;
+}
 
-  <p class="small-heading">A LITTLE MUSIC FOR YOU</p>
+/* Mobile */
+@media (max-width: 600px) {
+  .website { padding: 15px 10px; }
+  .welcome { padding: 35px 15px; }
+  h1 { font-size: 32px; }
+  .polaroid { width: min(220px, 90%); }
+}
 
-  <h2>Our Little Love Playlist 🎶</h2>
+/* Fade animation */
+section {
+  animation: fadeIn 1s ease;
+}
 
-  <div class="music-card">
-
-    <div class="music-icon">🎧</div>
-
-    <h3>Cute Bollywood Love Music</h3>
-
-    <p class="song-artist">A special melody for Priya ♡</p>
-
-    <audio id="birthdayAudio" preload="none">
-      <source src="https://raw.githubusercontent.com/fencershriya-dev/birthday-music/main/sub_clair-happy-birthday-578363.mp3" type="audio/mpeg">
-    </audio>
-
-    <div class="music-controls">
-
-      <button id="playButton">▶ Play</button>
-
-      <button id="pauseButton">Ⅱ Pause</button>
-
-    </div>
-
-    <p id="musicStatus">Press play to enjoy the music 💜</p>
-
-  </div>
-
-</section>
-
-</div>
-  </head>
-  <body>
-
-    <script src="./script.js"></script>
-  </body>
-</html>
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
