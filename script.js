@@ -1,186 +1,106 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="./style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pen</title><div class="website">
+const button = document.getElementById("openButton");
 
-  <!-- Welcome Section -->
-  <section class="welcome">
+const surprise = document.getElementById("surprise");
 
-    <div class="stars">✦ ♡ ✦</div>
+button.addEventListener("click", function() {
 
-    <p class="small-heading">
-      A LITTLE SURPRISE FOR
-    </p>
+  surprise.style.display = "block";
 
-    <h1>Surpise For You</h1>
+  surprise.scrollIntoView({
+    behavior: "smooth"
+  });
 
-    <h2>Happy Birthday, My Girl! 💜</h2>
+  button.innerText = "Surprise Opened 💜";
 
-    <p class="intro">
-      Today is all about you.
-      I've made something special
-      just to make your day beautiful.
-    </p>
+});
+const letterButton = document.getElementById("letterButton");
 
-    <button id="openButton">
-      Open Your Surprise ♡
-    </button>
+const letterContent = document.getElementById("letterContent");
 
-    <p class="bottom-note">
-      Made with love, just for you ✨
-    </p>
+letterButton.addEventListener("click", function() {
 
-  </section>
+  letterContent.style.display = "block";
 
-  <!-- Birthday Scrapbook -->
-<section class="surprise" id="surprise">
+  letterButton.innerText = "Letter Opened 💗";
 
-  <div class="scrapbook">
+  letterContent.scrollIntoView({
+    behavior: "smooth",
+    block: "center"
+  });
 
-    <p class="small-heading">A BOOK FULL OF MEMORIES</p>
+});
+const heartContainer = document.getElementById("floatingHearts");
 
-    <h2>My Favourite Memories ♡</h2>
+function createHeart() {
 
-    <p class="memory-intro">
-      A few pictures, a million memories.
-    </p>
+  const heart = document.createElement("span");
 
-    <div class="memory-grid">
+  heart.className = "heart";
 
-      <div class="polaroid">
-        <img src="https://i.postimg.cc/ZnspWtd6/IMG-20261101-WA0006.jpg" alt="Memory 1">
-        <p>My favourite person ♡</p>
-      </div>
+  heart.innerHTML = "♡";
 
-      <div class="polaroid">
-        <img src="https://i.postimg.cc/Qd31Vb9L/IMG-20261101-WA0005.jpg" alt="Memory 2">
-        <p>One of a kind ✨</p>
-      </div>
+  heart.style.left = Math.random() * 100 + "%";
 
-      <div class="polaroid">
-        <img src="https://i.postimg.cc/PqFCbzxx/IMG-20261101-215157.jpg" alt="Memory 3">
-        <p>Forever a special memory 💜</p>
-      </div>
+  heart.style.animationDuration =
+    (4 + Math.random() * 3) + "s";
 
-    </div>
+  heartContainer.appendChild(heart);
 
-    <p class="scrapbook-footer">
-      Every picture has a story ♡
-    </p>
+  setTimeout(() => {
+    heart.remove();
+  }, 7000);
 
-  </div>
+}
 
-</section>
-      <!-- Birthday Letter Section -->
+setInterval(createHeart, 900);
 
-<section class="letter-section">
 
-  <p class="small-heading">A LITTLE SOMETHING FOR YOU</p>
+const magicButton = document.getElementById("magicButton");
 
-  <h2>A Letter From My Heart 💌</h2>
+const magicMessage = document.getElementById("magicMessage");
 
-  <div class="envelope">
-    <div class="envelope-icon">💌</div>
+magicButton.addEventListener("click", function() {
 
-    <h3>For My Girl ♡</h3>
+  magicMessage.innerText =
+    "Priya, may all your dreams come true! Happy Birthday, My Girl! 💜✨";
 
-    <p>There's something I want to tell you...</p>
+  magicButton.innerText = "Wish Made! ♡";
 
-    <button id="letterButton">
-      Open My Letter 💜
-    </button>
-  </div>
+});
+const audio = document.getElementById("birthdayAudio");
 
-  <div class="letter-content" id="letterContent">
+const playButton = document.getElementById("playButton");
 
-    <h3>Dear Sisoo, 💗</h3>
+const pauseButton = document.getElementById("pauseButton");
 
-    <p>
-      Happy Birthday, My Girl!
-    </p>
+const musicStatus = document.getElementById("musicStatus");
 
-    <p>
-      Today is all about celebrating you.
-      I hope your day is filled with happiness,
-      laughter and beautiful moments.
-    </p>
+playButton.addEventListener("click", async function() {
 
-    <p>
-      Thank you for being such a special part
-      of my memories. You deserve all the
-      wonderful things life has to offer.
-    </p>
+  try {
+    await audio.play();
 
-    <p>
-      Keep smiling, keep shining and never
-      stop being yourself.
-    </p>
+    musicStatus.innerText = "Now playing for you ♡";
 
-    <p class="letter-end">
-      With lots of love ♡
-    </p>
+  } catch (error) {
 
-  </div>
+    musicStatus.innerText =
+      "Please add a valid music link first 💜";
 
-</section>
-      <!-- Floating Hearts -->
-<div class="floating-hearts" id="floatingHearts"></div>
+  }
 
-<!-- Final Surprise -->
-<section class="final-surprise">
+});
 
-  <h2>One Last Little Surprise 💜</h2>
+pauseButton.addEventListener("click", function() {
 
-  <p>Because someone as special as you deserves magic.</p>
+  audio.pause();
 
-  <button id="magicButton">
-    Make a Wish ✨
-  </button>
+  musicStatus.innerText = "Music paused ♡";
 
-  <h3 id="magicMessage"></h3>
+});
 
-</section>
-      <!-- Music Player -->
+audio.addEventListener("ended", function() {
 
-<section class="music-section">
+  musicStatus.innerText = "Hope you enjoyed the music 💜";
 
-  <p class="small-heading">A LITTLE MUSIC FOR YOU</p>
-
-  <h2>Our Little Love Playlist 🎶</h2>
-
-  <div class="music-card">
-
-    <div class="music-icon">🎧</div>
-
-    <h3>Cute Bollywood Love Music</h3>
-
-    <p class="song-artist">A special melody for Priya ♡</p>
-
-    <audio id="birthdayAudio" preload="none">
-      <source src="https://raw.githubusercontent.com/fencershriya-dev/birthday-music/main/sub_clair-happy-birthday-578363.mp3" type="audio/mpeg">
-    </audio>
-
-    <div class="music-controls">
-
-      <button id="playButton">▶ Play</button>
-
-      <button id="pauseButton">Ⅱ Pause</button>
-
-    </div>
-
-    <p id="musicStatus">Press play to enjoy the music 💜</p>
-
-  </div>
-
-</section>
-
-</div>
-  </head>
-  <body>
-
-    <script src="./script.js"></script>
-  </body>
-</html>
+});
