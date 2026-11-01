@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pen</title><div class="website">
+
+  <!-- Welcome Section -->
+  <section class="welcome">
+
+    <div class="stars">✦ ♡ ✦</div>
+
+    <p class="small-heading">
+      A LITTLE SURPRISE FOR
+    </p>
+
+    <h1>Surpise For You</h1>
+
+    <h2>Happy Birthday, My Girl! 💜</h2>
+
+    <p class="intro">
+      Today is all about you.
+      I've made something special
+      just to make your day beautiful.
+    </p>
+
+    <button id="openButton">
+      Open Your Surprise ♡
+    </button>
+
+    <p class="bottom-note">
+      Made with love, just for you ✨
+    </p>
+
+  </section>
+
+  <!-- Birthday Scrapbook -->
+<section class="surprise" id="surprise">
+
+  <div class="scrapbook">
+
+    <p class="small-heading">A BOOK FULL OF MEMORIES</p>
+
+    <h2>My Favourite Memories ♡</h2>
+
+    <p class="memory-intro">
+      A few pictures, a million memories.
+    </p>
+
+    <div class="memory-grid">
+
+      <div class="polaroid">
+        <img src="https://i.postimg.cc/ZnspWtd6/IMG-20261101-WA0006.jpg" alt="Memory 1">
+        <p>My favourite person ♡</p>
+      </div>
+
+      <div class="polaroid">
+        <img src="https://i.postimg.cc/Qd31Vb9L/IMG-20261101-WA0005.jpg" alt="Memory 2">
+        <p>One of a kind ✨</p>
+      </div>
+
+      <div class="polaroid">
+        <img src="https://i.postimg.cc/PqFCbzxx/IMG-20261101-215157.jpg" alt="Memory 3">
+        <p>Forever a special memory 💜</p>
+      </div>
+
+    </div>
+
+    <p class="scrapbook-footer">
+      Every picture has a story ♡
+    </p>
+
+  </div>
+
+</section>
+      <!-- Birthday Letter Section -->
+
+<section class="letter-section">
+
+  <p class="small-heading">A LITTLE SOMETHING FOR YOU</p>
+
+  <h2>A Letter From My Heart 💌</h2>
+
+  <div class="envelope">
+    <div class="envelope-icon">💌</div>
+
+    <h3>For My Girl ♡</h3>
+
+    <p>There's something I want to tell you...</p>
+
+    <button id="letterButton">
+      Open My Letter 💜
+    </button>
+  </div>
+
+  <div class="letter-content" id="letterContent">
+
+    <h3>Dear Sisoo, 💗</h3>
+
+    <p>
+      Happy Birthday, My Girl!
+    </p>
+
+    <p>
+      Today is all about celebrating you.
+      I hope your day is filled with happiness,
+      laughter and beautiful moments.
+    </p>
+
+    <p>
+      Thank you for being such a special part
+      of my memories. You deserve all the
+      wonderful things life has to offer.
+    </p>
+
+    <p>
+      Keep smiling, keep shining and never
+      stop being yourself.
+    </p>
+
+    <p class="letter-end">
+      With lots of love ♡
+    </p>
+
+  </div>
+
+</section>
+      <!-- Floating Hearts -->
+<div class="floating-hearts" id="floatingHearts"></div>
+
+<!-- Final Surprise -->
+<section class="final-surprise">
+
+  <h2>One Last Little Surprise 💜</h2>
+
+  <p>Because someone as special as you deserves magic.</p>
+
+  <button id="magicButton">
+    Make a Wish ✨
+  </button>
+
+  <h3 id="magicMessage"></h3>
+
+</section>
+      <!-- Music Player -->
+
+<section class="music-section">
+
+  <p class="small-heading">A LITTLE MUSIC FOR YOU</p>
+
+  <h2>Our Little Love Playlist 🎶</h2>
+
+  <div class="music-card">
+
+    <div class="music-icon">🎧</div>
+
+    <h3>Cute Bollywood Love Music</h3>
+
+    <p class="song-artist">A special melody for Priya ♡</p>
+
+    <audio id="birthdayAudio" preload="none">
+      <source src="https://raw.githubusercontent.com/fencershriya-dev/birthday-music/main/sub_clair-happy-birthday-578363.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="music-controls">
+
+      <button id="playButton">▶ Play</button>
+
+      <button id="pauseButton">Ⅱ Pause</button>
+
+    </div>
+
+    <p id="musicStatus">Press play to enjoy the music 💜</p>
+
+  </div>
+
+</section>
+
+</div>
+  </head>
+  <body>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
