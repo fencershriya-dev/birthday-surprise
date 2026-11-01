@@ -1,106 +1,54 @@
-const button = document.getElementById("openButton");
+document.addEventListener("DOMContentLoaded", function () {
 
-const surprise = document.getElementById("surprise");
+  const openButton = document.getElementById("openButton");
+  const surprise = document.getElementById("surprise");
 
-button.addEventListener("click", function() {
+  const letterButton = document.getElementById("letterButton");
+  const letterContent = document.getElementById("letterContent");
+  const envelope = document.querySelector(".envelope");
 
-  surprise.style.display = "block";
+  const magicButton = document.getElementById("magicButton");
+  const magicMessage = document.getElementById("magicMessage");
 
-  surprise.scrollIntoView({
-    behavior: "smooth"
+  const playButton = document.getElementById("playButton");
+  const pauseButton = document.getElementById("pauseButton");
+  const audio = document.getElementById("birthdayAudio");
+  const musicStatus = document.getElementById("musicStatus");
+
+  // Open birthday surprise
+  openButton.addEventListener("click", function () {
+    surprise.style.display = "block";
+    surprise.scrollIntoView({ behavior: "smooth" });
   });
 
-  button.innerText = "Surprise Opened 💜";
-
-});
-const letterButton = document.getElementById("letterButton");
-
-const letterContent = document.getElementById("letterContent");
-
-letterButton.addEventListener("click", function() {
-
-  letterContent.style.display = "block";
-
-  letterButton.innerText = "Letter Opened 💗";
-
-  letterContent.scrollIntoView({
-    behavior: "smooth",
-    block: "center"
+  // Open birthday letter
+  letterButton.addEventListener("click", function () {
+    letterContent.style.display = "block";
+    envelope.style.display = "none";
+    letterContent.scrollIntoView({ behavior: "smooth" });
   });
 
-});
-const heartContainer = document.getElementById("floatingHearts");
+  // Make a wish
+  magicButton.addEventListener("click", function () {
+    magicMessage.textContent =
+      "May all your wishes come true! Happy Birthday! 💜✨";
+  });
 
-function createHeart() {
+  // Play music
+  playButton.addEventListener("click", function () {
+    audio.play()
+      .then(function () {
+        musicStatus.textContent = "Playing your special song 💜";
+      })
+      .catch(function () {
+        musicStatus.textContent = "Music could not play. Please try again.";
+      });
+  });
 
-  const heart = document.createElement("span");
-
-  heart.className = "heart";
-
-  heart.innerHTML = "♡";
-
-  heart.style.left = Math.random() * 100 + "%";
-
-  heart.style.animationDuration =
-    (4 + Math.random() * 3) + "s";
-
-  heartContainer.appendChild(heart);
-
-  setTimeout(() => {
-    heart.remove();
-  }, 7000);
-
-}
-
-setInterval(createHeart, 900);
-
-
-const magicButton = document.getElementById("magicButton");
-
-const magicMessage = document.getElementById("magicMessage");
-
-magicButton.addEventListener("click", function() {
-
-  magicMessage.innerText =
-    "Priya, may all your dreams come true! Happy Birthday, My Girl! 💜✨";
-
-  magicButton.innerText = "Wish Made! ♡";
-
-});
-const audio = document.getElementById("birthdayAudio");
-
-const playButton = document.getElementById("playButton");
-
-const pauseButton = document.getElementById("pauseButton");
-
-const musicStatus = document.getElementById("musicStatus");
-
-playButton.addEventListener("click", async function() {
-
-  try {
-    await audio.play();
-
-    musicStatus.innerText = "Now playing for you ♡";
-
-  } catch (error) {
-
-    musicStatus.innerText =
-      "Please add a valid music link first 💜";
-
-  }
-
-});
-
-pauseButton.addEventListener("click", function() {
-
-  audio.pause();
-
-  musicStatus.innerText = "Music paused ♡";
-
-});
-
-audio.addEventListener("ended", function() {
-
-  musicStatus.innerText = "Hope you enjoyed the music 💜";
+  // Pause music
+  pauseButton.addEventListener("click", function () {
+    audio.pause();
+    musicStatus.textContent = "Music paused 💜";
+  });
 
 });
